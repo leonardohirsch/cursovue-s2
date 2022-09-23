@@ -1,0 +1,254 @@
+$primary: #5265E1;
+$secondary: #FA5959;
+$accordion-icon-color: $primary;
+$accordion-icon-active-color: $secondary;
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/*Nuevas Width clases Bootstrap style*/
+.w-md-50{
+    @media only screen and (min-width: 768px) {
+            width: 50%;
+            margin: auto;       
+    }
+}
+.w-md-75{
+    @media only screen and (min-width: 768px) {
+            width: 75%;
+            margin: auto;    
+    }
+}
+
+.w-md-25{
+    @media only screen and (min-width: 768px) {
+            width: 25%;
+            margin: auto;       
+    }
+}
+
+/*Button y links custom*/
+.btn.btn-primary:hover{
+    color:$primary;
+    background-color: $white;
+}
+
+.btn.btn-light:hover{
+    color:$dark;
+    background-color: $white;
+}
+
+.btn-secondary{
+    color: $white;
+}
+
+.btn.btn-secondary:hover{
+    color:$red;
+    background-color: $white;
+}
+
+.nav-link:hover{
+    color: $secondary;
+}
+
+
+/*Nav princial custom*/
+nav:has(button[aria-expanded="true"]) { 
+    background-color: rgba(37, 41, 88, 0.9);
+    & #nav-logo{ 
+        @media only screen and (max-width: 768px) {
+            filter: saturate(0) brightness(700%) saturate(0);
+        }
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav:has(button[aria-expanded="true"]) { 
+        background-color: transparent;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+
+        & #navbarToggler{
+            padding:  $spacer;
+            height: 100vh;
+
+            & .navbar-nav{
+                width: 80%;
+                margin: auto;
+                padding:  $spacer;
+            }
+            & .nav-item{
+                text-align: center;
+                width: 100%;
+                padding:  $spacer * .25;
+                border-top: 0.5px solid $light;
+            }
+            & .nav-link{
+                color:$white;
+                &:hover {
+                    color: $secondary;
+                }
+            }
+            
+            & .btn {
+                margin-top: $spacer;
+                color: $white;
+                border-color: $white;
+                background-color: transparent;
+                width: 100%;
+
+                &.btn-secondary:hover {
+                    color: $secondary;
+                    background-color: transparent;
+                }
+            }
+            & .nav-social .nav-item{
+                border: 0;
+            }
+            
+            
+        }
+       
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    nav {
+        & .nav-social{
+            display: none;
+        }
+    }
+}
+
+/*Hamburguesa icono*/
+button[aria-expanded="true"] { 
+    color:$white;
+    background-color: transparent;
+
+    &  > .navbar-toggler-icon-line{
+        /*background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");*/
+        &:nth-of-type(1) {
+            background: white;
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        &:nth-of-type(2) {
+            background: white;
+            opacity: 0;
+        }
+        &:nth-of-type(3) {
+            background: white;
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+    
+    }
+}
+
+.navbar-toggler-icon-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px 0 5px 0;
+    background: black;
+}
+
+/*Mancha de fondo clases*/
+.mancha-fondo__left{
+    border-bottom-left-radius: 40%;
+}
+.mancha-fondo__right{
+    border-bottom-right-radius: 40%;
+}
+
+/*Navtabs custom*/
+.nav-tabs{
+    border:  none;
+    & .nav-link{
+        border:  none;
+        color: $dark;
+        @media only screen and (max-width: 768px) {
+            margin: auto;
+        }
+        &:hover {
+            border-bottom: 3px solid $secondary;
+          }
+        &.active {
+          border-bottom: 3px solid $secondary;
+          font-weight: bold;  
+        }
+    }
+    & .nav-item{
+        border-bottom: 1px solid;
+        @media only screen and (max-width: 768px) {
+            width: 100%;
+        }
+    }
+    & .nav-item:first-of-type{
+        @media only screen and (max-width: 768px) {
+            border-top: 1px solid;
+        }
+    }
+}
+
+/*Cards custom*/
+.card{
+    border-top:  none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-shadow: $box-shadow;
+    &-img-top{
+        width: 40%;
+        margin: auto;
+        margin-top: $spacer * 1.5;
+    }
+}
+
+/*Accordion custom*/
+.accordion-button:hover{
+    color: $secondary;
+}
+.accordion-button:not(.collapsed) {
+    background-color: $white;
+}
+
+/*Footer custom*/
+footer {
+    & .form-control::placeholder {
+        font-size: $small-font-size;
+        color: $primary;
+      }
+      
+    & .form-control:focus {
+        color: $primary;
+      }
+    & .form-control {
+        color: $primary;
+      }
+
+    & .footer__menu{
+        background-color: $blue-900;
+    }
+    & .footer__menu a{
+        color: $white;
+        text-decoration: none;
+    }
+    & .footer__menu{
+        font-size: 0.9rem;
+    }
+    & #footer-logo{ 
+        filter: saturate(0) brightness(700%) saturate(0);
+    }
+
+    & .nav-social{
+        column-gap: $spacer;
+    }
+}
+
+/*Form custom*/
+.invalid-feedback{
+    background-color: $secondary;
+    color: $white;
+    margin: 0;
+    border-radius: $border-radius;
+}
